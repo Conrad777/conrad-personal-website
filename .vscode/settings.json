@@ -1,0 +1,105 @@
+{
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#067a5d",
+		"activityBar.foreground": "#fff",
+		"activityBar.inactiveForeground": "#a5ecda",
+
+		"titleBar.activeBackground": "#045541",
+		"titleBar.activeForeground": "#F5FCF6",
+		"titleBar.inactiveForeground": "#a5ecda",
+		"titleBar.inactiveBackground": "#414141"
+	},
+
+	// ESLint configuration for flat config format (ESLint 9+)
+	"eslint.experimental.useFlatConfig": true,
+	"eslint.useFlatConfig": true,
+	"eslint.workingDirectories": [
+		{ "pattern": "./apps/*" },
+		{ "pattern": "./libraries/*" },
+		{ "pattern": "./packages/*" },
+		{ "pattern": "./design-system/*" },
+		{ "pattern": "./core-module-interfaces/*" },
+		{ "pattern": "./devx/*/*" },
+		{ "pattern": "./testing/*" }
+	],
+	"eslint.enable": true,
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"svelte"
+	],
+	"eslint.format.enable": true,
+	"eslint.alwaysShowStatus": true,
+	"eslint.codeAction.showDocumentation": {
+		"enable": true
+	},
+	"eslint.options": {
+		"flags": ["unstable_config_lookup_from_file"]
+	},
+
+	// Enable ESLint as formatter for specific file types
+	"[javascript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "explicit"
+		}
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "explicit"
+		}
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "explicit"
+		}
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "explicit"
+		}
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "explicit"
+		}
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": "explicit"
+		}
+	},
+
+	// General editor settings
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"editor.formatOnSave": false,
+	"editor.formatOnPaste": true,
+
+	// File settings for consistency
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+
+	// Other existing settings
+	"vitest.disableWorkspaceWarning": true,
+	"prettier.printWidth": 120,
+
+	"biome.enabled": false
+}
