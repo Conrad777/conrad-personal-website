@@ -1,0 +1,58 @@
+---
+import Header from "../components/layout/Header.astro";
+import "../styles/global.css";
+const {
+  title = "Conrad Holtzhausen | Engineering Manager, Senior Frontend Software Engineer",
+  description = "//TODO:",
+  url = "//TODO:",
+  logo = "//TODO:",
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- favicons -->
+    <!-- <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content={title} />
+    <link rel="manifest" href="/site.webmanifest" /> -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- open graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={logo} />
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={logo} />
+
+    <!-- Theme initialization script - must run early to prevent FOUC -->
+    <script src="/src/scripts/theme-init.js"></script>
+  </head>
+
+  <body class="mx-auto max-w-xl bg-background text-default transition-colors duration-200">
+    <Header />
+    <slot />
+  </body>
+</html>

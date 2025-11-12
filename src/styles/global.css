@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Kay+Pho+Du:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-main: "Kay Pho Du", serif;
+
+    /* Light theme colors */
+    --color-default: #000000;
+    --color-primary: #1D39FF;
+    --color-background: #ffffff;
+    --color-surface: #f8fafc;
+    --color-border: #e5e7eb;
+    --color-muted: #6b7280;
+    --color-accent: #f1f5f9;
+
+    /* Semantic colors */
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+
+    /* Tooltip colors */
+    --color-tooltip-bg: rgba(0, 0, 0, 0.8);
+    --color-tooltip-text: white;
+}
+
+body {
+    font-family: var(--font-main);
+}
+
+/* Dark theme color overrides */
+.dark {
+    --color-default: #ffffff;
+    --color-primary: #4EBAE6;
+    --color-background: #0f172a;
+    --color-surface: #1e293b;
+    --color-border: #334155;
+    --color-muted: #94a3b8;
+    --color-accent: #1e293b;
+
+    /* Dark semantic colors */
+    --color-success: #34d399;
+    --color-warning: #fbbf24;
+    --color-error: #f87171;
+
+    /* Dark tooltip colors */
+    --color-tooltip-bg: rgba(255, 255, 255, 0.9);
+    --color-tooltip-text: #000000;
+}
+
+/* System preference media query fallback */
+@media (prefers-color-scheme: dark) {
+    :root:not(.light):not(.dark) {
+        --color-default: #ffffff;
+        --color-primary: #4EBAE6;
+        --color-background: #0f172a;
+        --color-surface: #1e293b;
+        --color-border: #334155;
+        --color-muted: #94a3b8;
+        --color-accent: #1e293b;
+
+        --color-success: #34d399;
+        --color-warning: #fbbf24;
+        --color-error: #f87171;
+
+        --color-tooltip-bg: rgba(255, 255, 255, 0.9);
+        --color-tooltip-text: #000000;
+    }
+}
+
+/* Utility classes for colors */
+.text-default { color: var(--color-default); }
+.text-primary { color: var(--color-primary); }
+.text-muted { color: var(--color-muted); }
+
+.bg-background { background-color: var(--color-background); }
+.bg-surface { background-color: var(--color-surface); }
+.bg-primary { background-color: var(--color-primary); }
+.bg-accent { background-color: var(--color-accent); }
+
+.border-default { border-color: var(--color-border); }
+
+/* Smooth transitions for theme changes */
+* {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Prevent transition on theme initialization to avoid flash */
+.theme-initialized * {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
