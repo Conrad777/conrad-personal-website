@@ -1,0 +1,50 @@
+.theme__checkbox {
+  &:checked~.theme__button {
+    .theme__button--light {
+      transform: translateY(100%);
+      animation: moveUp 0.4s .3s ease-out forwards;
+    }
+
+    .theme__button--dark {
+      animation: moveDown 0.4s ease-out forwards;
+    }
+  }
+
+  &:not(:checked)~.theme__button {
+    .theme__button--light {
+      animation: moveDown 0.4s ease-out forwards;
+    }
+
+    .theme__button--dark {
+      transform: translateY(100%);
+      animation: moveUp 0.4s .3s ease-out forwards;
+    }
+  }
+}
+
+.theme__button {
+  .theme__button__icons {
+    transition: transform .2s ease;
+
+  }
+
+  &:hover .theme__button__icons {
+    transform: translateY(15%);
+  }
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveDown {
+  to {
+    transform: translateY(100%);
+  }
+}

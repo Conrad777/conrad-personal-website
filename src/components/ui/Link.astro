@@ -1,0 +1,32 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {
+  isMuted?: boolean;
+}
+
+const { isMuted, class: className, ...props } = Astro.props;
+---
+
+<a class:list={[isMuted ? "muted" : "active", className]} {...props}><slot /></a>
+
+<style>
+  a.active {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+
+    &:hover {
+      text-decoration-style: solid;
+    }
+  }
+
+  a.muted {
+    color: var(--color-default);
+
+    &:hover {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+  }
+</style>

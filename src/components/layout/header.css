@@ -1,0 +1,30 @@
+@supports (animation-timeline: scroll()) {
+    .avatar-head {
+        transform: scale(50%);
+
+        animation-name: enterIcon;
+        /* Firefox requires this to apply the animation */
+        animation-direction: alternate;
+        animation-timeline: scroll(block root);
+    }
+}
+
+@keyframes enterIcon {
+    from {
+        width: 0;
+        transform: scale(0);
+    }
+
+    10% {
+        width: 100%;
+    }
+
+    15% {
+        transform: scale(1.2);
+    }
+
+    25%,
+    to {
+        transform: scale(1);
+    }
+}
