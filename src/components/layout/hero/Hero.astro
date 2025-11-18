@@ -1,0 +1,27 @@
+---
+import AvatarSwimming from "./AvatarSwimming.astro";
+import "./hero.css";
+import WaveThick from "./WaveThick.astro";
+import WaveThin from "./WaveThin.astro";
+---
+
+<div class="relative overflow-x-hidden h-[215px] flex items-end">
+  <div class="absolute w-[900px] bottom-10 flex -z-1 animate-(--wave-animation)" style="--wave-y: -1px; --wave-x: -5px">
+    {Array.from({ length: 5 }, () => <WaveThick isDark />)}
+  </div>
+  <div
+    class="absolute w-[900px] bottom-5 -left-21 flex -z-1 animate-(--wave-animation)"
+    style="--wave-y: 2px; --wave-x: 10px"
+  >
+    {Array.from({ length: 5 }, () => <WaveThick />)}
+  </div>
+  <div
+    class="absolute pt-12 bottom-7 left-32 overflow-hidden -z-1 animate-(--wave-animation)"
+    style="--wave-y: 2px; --wave-x: 1px"
+  >
+    <AvatarSwimming class="avatar-swimmer" />
+  </div>
+  <div class="flex w-[900px] animate-(--wave-animation)">
+    {Array.from({ length: 5 }, () => <WaveThin isDark />)}
+  </div>
+</div>

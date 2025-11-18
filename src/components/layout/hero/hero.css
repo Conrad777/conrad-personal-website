@@ -1,0 +1,125 @@
+:root {
+    --wave-y: -2px;
+    --wave-x: -10px;
+    --wave-animation: wave 5s infinite alternate cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.avatar-swimmer {
+    animation: goUnder;
+    animation-timeline: scroll(block root);
+
+}
+
+.avatar-swimmer__eye-lid {
+    animation: blinkEyelids 10s infinite, closeEyes;
+    animation-timeline: auto, scroll(block root);
+    animation-composition: replace, add;
+}
+
+.avatar-swimmer__eye-pupil {
+    animation: movePupils 8s infinite;
+}
+
+.avatar-swimmer__arm-right {
+    transform-origin: 34px 86px;
+    animation: waveArms 5s infinite alternate, closeNose;
+    animation-timeline: auto, scroll(block root);
+    animation-composition: replace, add;
+}
+
+.avatar-swimmer__arm-left {
+    transform-origin: 88px 70px;
+    animation: waveArms 5s infinite alternate;
+}
+
+@keyframes wave {
+
+    to,
+    from {
+        transform: translate(0);
+    }
+
+    50% {
+        transform: translateY(var(--wave-y)) translateX(var(--wave-x));
+    }
+}
+
+@keyframes waveArms {
+
+    to,
+    from {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes goUnder {
+    from {
+        transform: translateY(0);
+    }
+
+    3% {
+        transform: translateY(-5%);
+    }
+
+    20%,
+    to {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes closeNose {
+    from {
+        transform: rotate(0);
+    }
+
+    3%, to {
+        transform: rotate(-114deg);
+    }
+
+}
+
+@keyframes closeEyes {
+    from, 2% {
+        opacity: 0;
+    }
+
+    3%, to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes blinkEyelids {
+
+    0%,
+    94%,
+    97%,
+    100% {
+        opacity: 0;
+    }
+
+    95.5%,
+    98.5% {
+        opacity: 1;
+    }
+}
+
+@keyframes movePupils {
+
+    0%,
+    30%,
+    63%,
+    90% {
+        transform: translateX(0);
+    }
+
+    33%,
+    60%,
+    93% {
+        transform: translateX(1px);
+    }
+}

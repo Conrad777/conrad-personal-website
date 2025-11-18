@@ -22,6 +22,11 @@
     /* Tooltip colors */
     --color-tooltip-bg: rgba(0, 0, 0, 0.8);
     --color-tooltip-text: white;
+
+    /* Water colors */
+    --color-water-foreground-light: #4EBAE6;
+    --color-water-foreground-dark: #1D39FF;
+    --color-water-background: #ffffff;
 }
 
 body {
@@ -46,6 +51,11 @@ body {
     /* Dark tooltip colors */
     --color-tooltip-bg: rgba(255, 255, 255, 0.9);
     --color-tooltip-text: #000000;
+
+    /* Water colors */
+    --color-water-foreground-light: #73C9EC;
+    --color-water-foreground-dark: #274895;
+    --color-water-background: #0F172A;
 }
 
 /* System preference media query fallback */
@@ -65,6 +75,11 @@ body {
 
         --color-tooltip-bg: rgba(255, 255, 255, 0.9);
         --color-tooltip-text: #000000;
+
+        /* Water colors */
+        --color-water-foreground-light: #73C9EC;
+        --color-water-foreground-dark: #274895;
+        --color-water-background: #0F172A;
     }
 }
 
