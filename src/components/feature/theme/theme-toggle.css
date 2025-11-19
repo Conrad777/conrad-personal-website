@@ -20,6 +20,11 @@
       animation: moveUp 0.4s .3s ease-out forwards;
     }
   }
+
+  &:focus~.theme__button .focus-styles {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
 }
 
 .theme__button {

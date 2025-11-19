@@ -29,4 +29,11 @@ const { isMuted, class: className, ...props } = Astro.props;
       text-decoration: underline;
     }
   }
+
+  a:focus,
+  a:focus-visible,
+  a:focus-within {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+  }
 </style>

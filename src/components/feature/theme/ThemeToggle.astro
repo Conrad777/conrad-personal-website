@@ -4,15 +4,18 @@ import { Icon } from "astro-icon/components";
 ---
 
 <div class="theme-toggle-container">
-  <input id="theme-toggle" class="theme__checkbox hidden" type="checkbox" />
-  <label for="theme-toggle" class="theme__button cursor-pointer group" aria-label="Toggle theme" title="Toggle theme">
-    <div class="w-full h-5 overflow-hidden relative">
-      <div class="theme__button__icons absolute inset-0">
-        <Icon name="theme-sun" size={23} class="theme__button--light absolute left-0.75 -bottom-1.5" />
-        <Icon name="theme-moon" class="theme__button--dark absolute left-1.5 -bottom-0.5" />
+  <input id="theme-toggle" class="theme__checkbox sr-only" type="checkbox" />
+  <label for="theme-toggle" class="theme__button cursor-pointer" aria-label="Toggle theme" title="Toggle theme">
+    <div class="focus-styles">
+      <h3 class="sr-only">Toggle theme</h3>
+      <div class="w-full h-5 overflow-hidden relative">
+        <div class="theme__button__icons absolute inset-0">
+          <Icon name="theme-sun" size={23} class="theme__button--light absolute left-0.75 -bottom-1.5" />
+          <Icon name="theme-moon" class="theme__button--dark absolute left-1.5 -bottom-0.5" />
+        </div>
       </div>
+      <Icon name="theme-water" width={30} height={12} />
     </div>
-    <Icon name="theme-water" width={30} height={12} />
   </label>
 </div>
 

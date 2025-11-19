@@ -5,23 +5,14 @@ import ThemeToggle from "../feature/theme/ThemeToggle.astro";
 import Link from "../ui/Link.astro";
 ---
 
-<style>
-  h1 span {
-    display: block;
-  }
-
-  nav ol li:not(:first-child):before {
-    content: "/";
-    padding: 0 var(--spacing);
-  }
-</style>
-
 <header class="sticky top-0 z-10 flex items-center text-base/6 md:text-lg/5 py-4 px-4 md:px-2 backdrop-blur-md">
   <div class="flex items-center gap-2">
     <Icon name="avatar-head" class="avatar-head" size={40} />
     <h1>
-      <span>Conrad</span>
-      <span>Holtzhausen</span>
+      <Link href="#" isMuted class="block">
+        <span>Conrad</span>
+        <span>Holtzhausen</span>
+      </Link>
     </h1>
   </div>
   <div class="ml-auto flex items-center gap-2">
