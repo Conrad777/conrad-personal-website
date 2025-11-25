@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon/components";
+import Link from "../../ui/Link.astro";
+import FooterWater from "./FooterWater.astro";
+---
+
+<footer class="overflow-hidden py-3 flex flex-col gap-2">
+  <FooterWater />
+  <p class="flex items-center gap-1 justify-end">
+    Made with
+    <span><Icon name="heart" /></span>
+    and
+    <Link href="https://github.com/Conrad777/conrad-personal-website" name="Github website repository" target="_blank"
+      >human hands</Link
+    >
+    <span><Icon name="hand" /></span>
+  </p>
+</footer>

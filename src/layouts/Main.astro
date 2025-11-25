@@ -1,6 +1,7 @@
 ---
-import Header from "../components/layout/Header.astro";
 import "../styles/global.css";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/footer/Footer.astro";
 const {
   title = "Conrad Holtzhausen | Engineering Manager, Senior Frontend Software Engineer",
   description = "//TODO:",
@@ -54,5 +55,6 @@ const {
   <body class="mx-auto max-w-2xl bg-background text-default transition-colors duration-200">
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>
