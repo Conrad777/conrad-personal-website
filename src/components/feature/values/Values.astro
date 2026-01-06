@@ -1,0 +1,44 @@
+---
+import Heading from "../../ui/Heading.astro";
+import P from "../../ui/P.astro";
+
+const { class: className } = Astro.props;
+
+const values = [
+  {
+    title: "Be valuable, but replaceable:",
+    description:
+      "Focus on equipping others with any skill you possess instead of making them reliant on yourself",
+  },
+  {
+    title: "Empower those you lead to be the best version of themselves:",
+    description: "Truly care and be a sacrificial leader",
+  },
+  {
+    title: "To keep the furnace burning, keep throwing logs into the fire:",
+    description: "Challenge yourself to grow",
+  },
+  {
+    title: "Live a life worth leading:",
+    description:
+      "Make time for the things that matter and be present in the lives of those in your immediate environment",
+  },
+  {
+    title: "Action everything with integrity:",
+    description: "Do the right thing even when no one is watching",
+  },
+];
+---
+
+<ul class:list={["list-disc px-4", className]}>
+  {
+    values.map(({ title, description }) => (
+      <li>
+        <span>
+          <Heading size="h3" pb={0}>{title}</Heading>
+          <P>{description}</P>
+        </span>
+      </li>
+    ))
+  }
+</ul>

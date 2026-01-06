@@ -1,0 +1,26 @@
+---
+import Link from "../../ui/Link.astro";
+import IconGithub from "./IconGithub.astro";
+import IconLinkedIn from "./IconLinkedIn.astro";
+
+const { class: className } = Astro.props;
+---
+
+<ul class={className}>
+  <li class="flex items-center gap-2">
+    <IconLinkedIn />
+    <Link
+      href="https://www.linkedin.com/in/conrad-holtzhausen-497aa213"
+      target="_blank"
+      name="Conrad LinkedIn Profile">LinkedIn</Link
+    >
+  </li>
+  <li class="flex items-center gap-2">
+    <IconGithub />
+    <Link
+      href="https://github.com/Conrad777"
+      name="Conrad Github Profile"
+      target="_blank">Github</Link
+    >
+  </li>
+</ul>
