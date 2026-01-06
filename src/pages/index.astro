@@ -1,100 +1,99 @@
 ---
 import Hero from "../components/layout/hero/Hero.astro";
+import Heading from "../components/ui/Heading.astro";
+import Link from "../components/ui/Link.astro";
+import P from "../components/ui/P.astro";
 import Main from "../layouts/Main.astro";
 import "../styles/global.css";
+import SocialMediaLinks from "../components/feature/social-media-links/SocialMediaLinks.astro";
+import Values from "../components/feature/values/Values.astro";
 ---
 
 <Main>
-  <Hero />
-  <div>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempore quisquam maxime ipsum vitae voluptatum
-      impedit. Vitae suscipit quos ratione molestias animi atque harum saepe? Quod odit sapiente officiis aperiam.
-    </p>
-    <br />
-    <br />
-    <br />
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam libero ut corporis eos labore facilis
-      quisquam dolor consequatur dolores at, veritatis delectus saepe numquam quibusdam explicabo maiores aliquam
-      reiciendis laborum.
-    </p>
-    <br />
-    <br />
-    <br />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ut rerum eum, quis, cum laborum at illum quas sapiente
-      mollitia, amet eligendi. Vitae praesentium laudantium quos rerum, ex aut aperiam?
-    </p>
-    <br />
-    <br />
-    <br />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempore quisquam maxime ipsum vitae voluptatum
-      impedit. Vitae suscipit quos ratione molestias animi atque harum saepe? Quod odit sapiente officiis aperiam.
-    </p>
-    <br />
-    <br />
-    <br />
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam libero ut corporis eos labore facilis
-      quisquam dolor consequatur dolores at, veritatis delectus saepe numquam quibusdam explicabo maiores aliquam
-      reiciendis laborum.
-    </p>
-    <br />
-    <br />
-    <br />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ut rerum eum, quis, cum laborum at illum quas sapiente
-      mollitia, amet eligendi. Vitae praesentium laudantium quos rerum, ex aut aperiam?
-    </p>
-    <br />
-    <br />
-    <br />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempore quisquam maxime ipsum vitae voluptatum
-      impedit. Vitae suscipit quos ratione molestias animi atque harum saepe? Quod odit sapiente officiis aperiam.
-    </p>
-    <br />
-    <br />
-    <br />
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam libero ut corporis eos labore facilis
-      quisquam dolor consequatur dolores at, veritatis delectus saepe numquam quibusdam explicabo maiores aliquam
-      reiciendis laborum.
-    </p>
-    <br />
-    <br />
-    <br />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ut rerum eum, quis, cum laborum at illum quas sapiente
-      mollitia, amet eligendi. Vitae praesentium laudantium quos rerum, ex aut aperiam?
-    </p>
-    <br />
-    <br />
-    <br />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, tempore quisquam maxime ipsum vitae voluptatum
-      impedit. Vitae suscipit quos ratione molestias animi atque harum saepe? Quod odit sapiente officiis aperiam.
-    </p>
-    <br />
-    <br />
-    <br />
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam libero ut corporis eos labore facilis
-      quisquam dolor consequatur dolores at, veritatis delectus saepe numquam quibusdam explicabo maiores aliquam
-      reiciendis laborum.
-    </p>
-    <br />
-    <br />
-    <br />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ut rerum eum, quis, cum laborum at illum quas sapiente
-      mollitia, amet eligendi. Vitae praesentium laudantium quos rerum, ex aut aperiam?
-    </p>
-    <br />
-    <br />
-    <br />
+  <Hero slot="hero" />
+  <div slot="content">
+    <P>
+      Hello 👋... I am Conrad, a human living in
+      <Link href="https://www.southafrica.net/" target="_blank"
+        >South Africa.
+      </Link> I guess if you read this, you would like to know a little about me,
+      so here it is…
+    </P>
+    <Heading>I have a career</Heading>
+    <P>
+      Professionally, I have worn many hats. I began as a Web Designer and
+      dabbled in some Graphic Design, predominantly creating corporate
+      identities. Midway into my journey, I transitioned to Frontend Engineering
+      and Development. I transitioned to the role of Engineering Manager over
+      the last two years. I've also unofficially worn the hats of Product
+      Manager, Product Designer and UX researcher, albeit just briefly 🤏.
+    </P>
+    <P>
+      As a <strong>Software Engineer</strong>, I take a pragmatic approach to
+      designing and building software. I always try to balance shipping the best
+      we have today with an execution plan to evolve and iterate on later. I've
+      been a tech lead on big initiatives and find great joy in being involved
+      in projects end-to-end. I have built SaaS software for over a decade. My
+      main philosophy when building SaaS products is to get users to play with
+      it as early as possible. If no one is using it, you won't know which parts
+      of your product are pain points and which parts are joys. Also, do
+      behavioural and product analytics and continuous discovery to make better
+      decisions. I've always leaned more towards the Frontend part of software
+      engineering, because I like design. I geek out on the little UI
+      interaction that seems negligible but makes the experience feel polished.
+      Most importantly, what I build should satisfy the user's needs and make
+      the desired jobs-to-be-done easier, not harder.
+    </P>
+    <P>
+      As an <strong>Engineering Manager</strong>, I have overseen many different
+      teams, and sometimes multiple teams at the same time. My outlook on
+      managing is to trust by default. The engineers I manage were hired because
+      they are good at their jobs. I have a bias towards trusting them and only
+      address the outliers. It is important to always have fun. Play games
+      (GeoGuessr, Gartic Phone, take your pick), get the team invested in the
+      same goals and celebrate together.
+    </P>
+    <P>
+      I am constantly learning where the sweet spot is between my technical
+      involvement, active contribution and taking a high-level view on current
+      and future initiatives. Many people write about this balance, but the
+      reality is much harder to get just right 🫠. My own conclusion on this is
+      that each phase in the Product lifecycle requires a different skillset to
+      manage, and when it does, don't feel bad about temporarily neglecting the
+      others a bit, because the pendulum will swing and those will come to the
+      foreground inevitably.
+    </P>
+    <Heading>My core values</Heading>
+    <P
+      >I've worked at a company called Hotjar, which had good core values
+      guiding their decision-making on all levels of the organisation. This was
+      the best example of Core Values done right that I've ever experienced.
+      Unfortunately, most companies do not really respect their Core Values at
+      an organisational level, creating a disconnected and frustrating
+      experience.
+    </P>
+    <P>
+      After Hotjar, I was confronted by this disconnect between Company's Core
+      Values and contrasting decision-making. As a response, I created my own,
+      personal, set of Core Values in which I function every day. I periodically
+      revisit these values, making sure I still adhere to them and that they are
+      still relevant.
+    </P>
+    <Values />
+    <Heading>I have a personal life too, you know</Heading>
+    <P
+      >In my personal life, I am a successful family man who loves his wife of
+      12 years and has 3 beautiful children. I don't claim to be perfect and am
+      constantly growing as a person. But I enjoy life, am kind where I can be
+      and ask myself the hard questions when I find it difficult. I believe in
+      the power of reflection and soul searching.
+    </P>
+    <P>
+      Also, I love swimming. Which is what inspired the design of this website
+      🏊🏻.
+    </P>
+    <Heading>More</Heading>
+    <P> You can find me in some other places of the internet too: </P>
+    <SocialMediaLinks class="flex flex-col gap-2" />
   </div>
 </Main>
-<!-- <Footer /> -->

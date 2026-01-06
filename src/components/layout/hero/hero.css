@@ -1,5 +1,5 @@
 :root {
-    --wave-y: -2px;
+    --wave-y: -1px;
     --wave-x: -10px;
     --wave-animation: wave 5s infinite alternate cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
@@ -62,7 +62,7 @@
     }
 
     3% {
-        transform: translateY(-5%);
+        transform: translateY(-10%);
     }
 
     20%,
@@ -76,18 +76,22 @@
         transform: rotate(0);
     }
 
-    3%, to {
+    3%,
+    to {
         transform: rotate(-114deg);
     }
 
 }
 
 @keyframes closeEyes {
-    from, 2% {
+
+    from,
+    2% {
         opacity: 0;
     }
 
-    3%, to {
+    3%,
+    to {
         opacity: 1;
     }
 
