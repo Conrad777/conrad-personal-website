@@ -1,0 +1,74 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+interface Props extends HTMLAttributes<Heading> {
+  size?: Heading;
+  pb?: number;
+  pt?: number;
+}
+
+const { size = "h2", pb = 4, pt = 2, class: className, ...props } = Astro.props;
+
+const baseClasses = `pb-${pb} pt-${pt}`;
+---
+
+{
+  size === "h1" && (
+    <h1 class:list={["text-base/6 md:text-lg/5", className]} {...props}>
+      <slot />
+    </h1>
+  )
+}
+{
+  size === "h2" && (
+    <h2
+      class:list={[
+        baseClasses,
+        "text-xl/6 md:text-2xl/5 font-medium tracking-wide",
+        className,
+      ]}
+      {...props}
+    >
+      <slot />
+    </h2>
+  )
+}
+{
+  size === "h3" && (
+    <h3
+      class:list={[
+        baseClasses,
+        "text-base/6 md:text-lg/6 tracking-wide font-semibold",
+        className,
+      ]}
+      {...props}
+    >
+      <slot />
+    </h3>
+  )
+}
+{
+  size === "h4" && (
+    <h4 class:list={[baseClasses, "", className]} {...props}>
+      <slot />
+    </h4>
+  )
+}
+{
+  size === "h5" && (
+    <h5 class:list={[baseClasses, "", className]} {...props}>
+      <slot />
+    </h5>
+  )
+}
+{
+  size === "h6" && (
+    <h6 class:list={[baseClasses, "", className]} {...props}>
+      <slot />
+    </h6>
+  )
+}
+
+<style></style>

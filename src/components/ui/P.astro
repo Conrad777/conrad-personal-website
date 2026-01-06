@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"p"> {}
+
+const { class: className, ...props } = Astro.props;
+---
+
+<p
+  class:list={["text-base/6 md:text-lg/6 pb-4 tracking-wide", className]}
+  {...props}
+>
+  <slot />
+</p>
