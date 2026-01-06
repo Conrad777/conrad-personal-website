@@ -3,25 +3,29 @@ import "./header.css";
 import { Icon } from "astro-icon/components";
 import ThemeToggle from "../feature/theme/ThemeToggle.astro";
 import Link from "../ui/Link.astro";
+import Heading from "../ui/Heading.astro";
 ---
 
-<header class="sticky top-0 z-10 flex items-center text-base/6 md:text-lg/5 py-4 px-4 md:px-2 backdrop-blur-md">
+<header
+  class="sticky top-0 z-10 flex items-center text-base/6 md:text-lg/5 py-4 px-4 md:px-2 backdrop-blur-md"
+>
   <div class="flex items-center gap-2">
     <Icon name="avatar-head" class="avatar-head" size={40} />
-    <h1>
+    <Heading size="h1">
       <Link href="#" isMuted class="block">
         <span>Conrad</span>
         <span>Holtzhausen</span>
       </Link>
-    </h1>
+    </Heading>
   </div>
   <div class="ml-auto flex items-center gap-2">
-    <nav>
+    <!-- TODO: add nav back when the other page exists -->
+    <!-- <nav>
       <ol class="flex">
         <li><Link href="#">Me</Link></li>
         <li><Link href="#" isMuted>Over the years</Link></li>
       </ol>
-    </nav>
+    </nav> -->
     <ThemeToggle />
   </div>
 </header>
