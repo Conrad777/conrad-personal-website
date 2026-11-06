@@ -1,4 +1,5 @@
 ---
+import { clickTracking } from "../../../lib/analytics";
 import Link from "../../ui/Link.astro";
 import IconGithub from "./IconGithub.astro";
 import IconLinkedIn from "./IconLinkedIn.astro";
@@ -13,7 +14,10 @@ const { class: className } = Astro.props;
       href="https://www.linkedin.com/in/conrad-holtzhausen-497aa213"
       target="_blank"
       name="Conrad LinkedIn Profile"
-      data-social-profile="linkedin">LinkedIn</Link
+      {...clickTracking({
+        name: ["social_profile_link", "click"],
+        properties: { context: "social_profiles", platform: "linkedin" },
+      })}>LinkedIn</Link
     >
   </li>
   <li class="flex items-center gap-2">
@@ -22,34 +26,10 @@ const { class: className } = Astro.props;
       href="https://github.com/Conrad777"
       name="Conrad Github Profile"
       target="_blank"
-      data-social-profile="github">Github</Link
+      {...clickTracking({
+        name: ["social_profile_link", "click"],
+        properties: { context: "social_profiles", platform: "github" },
+      })}>Github</Link
     >
   </li>
 </ul>
-
-<script>
-  import { logPostHogInteraction } from "../../../lib/posthog-logger";
-
-  type PostHogWindow = Window & {
-    posthog?: {
-      capture: (event: string, properties?: Record<string, string>) => void;
-    };
-  };
-
-  document
-    .querySelectorAll<HTMLAnchorElement>("[data-social-profile]")
-    .forEach((link) => {
-      link.addEventListener("click", () => {
-        const platform = link.dataset.socialProfile;
-        if (platform) {
-          (window as PostHogWindow).posthog?.capture(
-            "social_profile_link_clicked",
-            {
-              platform,
-            }
-          );
-          logPostHogInteraction("social profile link opened", { platform });
-        }
-      });
-    });
-</script>

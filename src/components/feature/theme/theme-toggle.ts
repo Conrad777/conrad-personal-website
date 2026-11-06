@@ -1,11 +1,5 @@
-import { logPostHogInteraction } from "../../../lib/posthog-logger";
+import { track } from "../../../lib/analytics";
 import { applyTheme, getCurrentTheme, type Theme } from "./theme.util";
-
-type PostHogWindow = Window & {
-  posthog?: {
-    capture: (event: string, properties?: Record<string, string>) => void;
-  };
-};
 
 const themeToBoolean = (theme: Theme) => theme === "light";
 const booleanToTheme = (checked: boolean) => (checked ? "light" : "dark");
@@ -20,13 +14,9 @@ export function initThemeToggle() {
     const target = event.target as HTMLInputElement;
     const theme = booleanToTheme(target?.checked);
     applyTheme(theme);
-    (window as PostHogWindow).posthog?.capture("theme_preference_changed", {
-      theme,
-      trigger: "manual",
-    });
-    logPostHogInteraction("theme preference applied", {
-      theme,
-      trigger: "manual",
+    track({
+      name: ["theme_toggle", "click"],
+      properties: { context: "appearance", theme },
     });
   });
 

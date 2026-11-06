@@ -67,6 +67,10 @@ const person = {
     <!-- Theme initialization script - must run early to prevent FOUC -->
     <script src="/src/scripts/theme-init"></script>
     <PostHog />
+    <script>
+      import { initClickTracking } from "../lib/analytics";
+      initClickTracking();
+    </script>
   </head>
 
   <body
