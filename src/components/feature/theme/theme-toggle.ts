@@ -1,3 +1,4 @@
+import { track } from "../../../lib/analytics";
 import { applyTheme, getCurrentTheme, type Theme } from "./theme.util";
 
 const themeToBoolean = (theme: Theme) => theme === "light";
@@ -13,6 +14,10 @@ export function initThemeToggle() {
     const target = event.target as HTMLInputElement;
     const theme = booleanToTheme(target?.checked);
     applyTheme(theme);
+    track({
+      name: ["theme_toggle", "click"],
+      properties: { context: "appearance", theme },
+    });
   });
 
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");

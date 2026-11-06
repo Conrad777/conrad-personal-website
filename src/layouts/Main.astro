@@ -1,13 +1,28 @@
 ---
 import "../styles/global.css";
+import PostHog from "../components/posthog.astro";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/footer/Footer.astro";
 const {
   title = "Conrad Holtzhausen | Engineering Manager, Senior Frontend Software Engineer",
-  description = "//TODO:",
-  url = "//TODO:",
-  logo = "//TODO:",
+  description = "Conrad Holtzhausen is an Engineering Manager and Senior Frontend Software Engineer in South Africa. Working in tech since 2010 and building SaaS since 2015.",
+  url = new URL(Astro.url.pathname, Astro.site).href,
+  logo = new URL("/android-chrome-512x512.png", Astro.site).href,
 } = Astro.props;
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Conrad Holtzhausen",
+  url: Astro.site?.href,
+  image: logo,
+  jobTitle: ["Engineering Manager", "Senior Frontend Software Engineer"],
+  address: { "@type": "PostalAddress", addressCountry: "ZA" },
+  sameAs: [
+    "https://www.linkedin.com/in/conrad-holtzhausen-497aa213",
+    "https://github.com/Conrad777",
+  ],
+};
 ---
 
 <html lang="en">
@@ -42,13 +57,20 @@ const {
     <meta property="og:image" content={logo} />
 
     <!-- twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={logo} />
 
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+
     <!-- Theme initialization script - must run early to prevent FOUC -->
     <script src="/src/scripts/theme-init"></script>
+    <PostHog />
+    <script>
+      import { initClickTracking } from "../lib/analytics";
+      initClickTracking();
+    </script>
   </head>
 
   <body

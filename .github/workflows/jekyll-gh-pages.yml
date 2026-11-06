@@ -33,6 +33,9 @@ jobs:
         run: pnpm install
       - name: Build with Astro
         run: pnpm run build
+        env:
+          PUBLIC_POSTHOG_PROJECT_TOKEN: ${{ vars.PUBLIC_POSTHOG_PROJECT_TOKEN }}
+          PUBLIC_POSTHOG_HOST: ${{ vars.PUBLIC_POSTHOG_HOST }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

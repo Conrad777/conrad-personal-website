@@ -1,0 +1,13 @@
+# Conrad Holtzhausen
+
+> Conrad Holtzhausen is an Engineering Manager and Senior Frontend Software Engineer based in South Africa. He has worked in tech since 2010 and has built SaaS software since 2015.
+
+- Career path: Web Designer (from 2010), then Frontend Engineer, then Engineering Manager (since May 2024).
+- As an engineer: pragmatic, balances shipping today with a plan to iterate later, and has been tech lead on large initiatives end-to-end.
+- As a manager: trusts engineers by default, has managed multiple teams at once, and values team fun and shared goals.
+
+## Links
+
+- [Personal website](https://conradholtzhausen.com/): About Conrad, his career, and his core values
+- [LinkedIn](https://www.linkedin.com/in/conrad-holtzhausen-497aa213): Work history
+- [GitHub](https://github.com/Conrad777): Code

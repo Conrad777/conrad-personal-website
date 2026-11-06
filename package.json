@@ -23,6 +23,7 @@
     "astro": "^5.15.2",
     "astro-icon": "^1.1.5",
     "canvas-confetti": "^1.9.3",
+    "posthog-js": "^1.447.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.16"

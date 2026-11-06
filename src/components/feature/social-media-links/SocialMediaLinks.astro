@@ -1,4 +1,5 @@
 ---
+import { clickTracking } from "../../../lib/analytics";
 import Link from "../../ui/Link.astro";
 import IconGithub from "./IconGithub.astro";
 import IconLinkedIn from "./IconLinkedIn.astro";
@@ -12,7 +13,11 @@ const { class: className } = Astro.props;
     <Link
       href="https://www.linkedin.com/in/conrad-holtzhausen-497aa213"
       target="_blank"
-      name="Conrad LinkedIn Profile">LinkedIn</Link
+      name="Conrad LinkedIn Profile"
+      {...clickTracking({
+        name: ["social_profile_link", "click"],
+        properties: { context: "social_profiles", platform: "linkedin" },
+      })}>LinkedIn</Link
     >
   </li>
   <li class="flex items-center gap-2">
@@ -20,7 +25,11 @@ const { class: className } = Astro.props;
     <Link
       href="https://github.com/Conrad777"
       name="Conrad Github Profile"
-      target="_blank">Github</Link
+      target="_blank"
+      {...clickTracking({
+        name: ["social_profile_link", "click"],
+        properties: { context: "social_profiles", platform: "github" },
+      })}>Github</Link
     >
   </li>
 </ul>
