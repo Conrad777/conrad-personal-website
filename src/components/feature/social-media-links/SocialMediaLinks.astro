@@ -12,7 +12,8 @@ const { class: className } = Astro.props;
     <Link
       href="https://www.linkedin.com/in/conrad-holtzhausen-497aa213"
       target="_blank"
-      name="Conrad LinkedIn Profile">LinkedIn</Link
+      name="Conrad LinkedIn Profile"
+      data-social-profile="linkedin">LinkedIn</Link
     >
   </li>
   <li class="flex items-center gap-2">
@@ -20,7 +21,35 @@ const { class: className } = Astro.props;
     <Link
       href="https://github.com/Conrad777"
       name="Conrad Github Profile"
-      target="_blank">Github</Link
+      target="_blank"
+      data-social-profile="github">Github</Link
     >
   </li>
 </ul>
+
+<script>
+  import { logPostHogInteraction } from "../../../lib/posthog-logger";
+
+  type PostHogWindow = Window & {
+    posthog?: {
+      capture: (event: string, properties?: Record<string, string>) => void;
+    };
+  };
+
+  document
+    .querySelectorAll<HTMLAnchorElement>("[data-social-profile]")
+    .forEach((link) => {
+      link.addEventListener("click", () => {
+        const platform = link.dataset.socialProfile;
+        if (platform) {
+          (window as PostHogWindow).posthog?.capture(
+            "social_profile_link_clicked",
+            {
+              platform,
+            }
+          );
+          logPostHogInteraction("social profile link opened", { platform });
+        }
+      });
+    });
+</script>

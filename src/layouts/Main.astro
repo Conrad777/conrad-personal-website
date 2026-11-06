@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import PostHog from "../components/posthog.astro";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/footer/Footer.astro";
 const {
@@ -65,6 +66,7 @@ const person = {
 
     <!-- Theme initialization script - must run early to prevent FOUC -->
     <script src="/src/scripts/theme-init"></script>
+    <PostHog />
   </head>
 
   <body
