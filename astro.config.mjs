@@ -8,8 +8,7 @@ import react from "@astrojs/react";
 import icon from "astro-icon";
 
 export default defineConfig({
-  site: "https://conrad777.github.io",
-  base: process.env.NODE_ENV === "production" ? "/conrad-personal-website" : "/",
+  site: "https://conradholtzhausen.com",
   vite: {
     plugins: [tailwindcss(), svgr()],
   },
