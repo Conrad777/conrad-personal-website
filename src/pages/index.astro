@@ -7,6 +7,7 @@ import Main from "../layouts/Main.astro";
 import "../styles/global.css";
 import SocialMediaLinks from "../components/feature/social-media-links/SocialMediaLinks.astro";
 import Values from "../components/feature/values/Values.astro";
+import RelativeDate from "../components/ui/RelativeDate.astro";
 ---
 
 <Main>
@@ -22,27 +23,20 @@ import Values from "../components/feature/values/Values.astro";
     <Heading>I have a career</Heading>
     <P>
       Professionally, I have worn many hats. I began as a Web Designer and
-      dabbled in some Graphic Design, predominantly creating corporate
-      identities. Midway into my journey, I transitioned to Frontend Engineering
-      and Development. I transitioned to the role of Engineering Manager over
-      the last two years. I've also unofficially worn the hats of Product
-      Manager, Product Designer and UX researcher, albeit just briefly 🤏.
+      dabbled in some Graphic Design. Midway into my journey, I transitioned to
+      Frontend Engineering and Development. I transitioned to the role of
+      Engineering Manager <RelativeDate date="'01/05/2024'" addSuffix />. I've
+      also unofficially worn the hats of Product Manager, Product Designer and
+      UX researcher.
     </P>
     <P>
       As a <strong>Software Engineer</strong>, I take a pragmatic approach to
       designing and building software. I always try to balance shipping the best
-      we have today with an execution plan to evolve and iterate on later. I've
-      been a tech lead on big initiatives and find great joy in being involved
-      in projects end-to-end. I have built SaaS software for over a decade. My
-      main philosophy when building SaaS products is to get users to play with
-      it as early as possible. If no one is using it, you won't know which parts
-      of your product are pain points and which parts are joys. Also, do
-      behavioural and product analytics and continuous discovery to make better
-      decisions. I've always leaned more towards the Frontend part of software
-      engineering, because I like design. I geek out on the little UI
-      interaction that seems negligible but makes the experience feel polished.
-      Most importantly, what I build should satisfy the user's needs and make
-      the desired jobs-to-be-done easier, not harder.
+      we have today with an execution plan to evolve and iterate on later. I
+      believe good engineering practices have always been vital, but even more
+      with LLM agents around. I've been a tech lead on big initiatives and find
+      great joy in being involved in projects end-to-end. I have built SaaS
+      software for over <RelativeDate date="01/01/2015" />.
     </P>
     <P>
       As an <strong>Engineering Manager</strong>, I have overseen many different
@@ -53,40 +47,20 @@ import Values from "../components/feature/values/Values.astro";
       (GeoGuessr, Gartic Phone, take your pick), get the team invested in the
       same goals and celebrate together.
     </P>
-    <P>
-      I am constantly learning where the sweet spot is between my technical
-      involvement, active contribution and taking a high-level view on current
-      and future initiatives. Many people write about this balance, but the
-      reality is much harder to get just right 🫠. My own conclusion on this is
-      that each phase in the Product lifecycle requires a different skillset to
-      manage, and when it does, don't feel bad about temporarily neglecting the
-      others a bit, because the pendulum will swing and those will come to the
-      foreground inevitably.
-    </P>
     <Heading>My core values</Heading>
     <P
-      >I've worked at a company called Hotjar, which had good core values
-      guiding their decision-making on all levels of the organisation. This was
-      the best example of Core Values done right that I've ever experienced.
-      Unfortunately, most companies do not really respect their Core Values at
-      an organisational level, creating a disconnected and frustrating
-      experience.
-    </P>
-    <P>
-      After Hotjar, I was confronted by this disconnect between Company's Core
-      Values and contrasting decision-making. As a response, I created my own,
-      personal, set of Core Values in which I function every day. I periodically
-      revisit these values, making sure I still adhere to them and that they are
-      still relevant.
+      >I created my own, personal, set of Core Values in which I function every
+      day. I periodically revisit these values, making sure I still adhere to
+      them and that they are still relevant.
     </P>
     <Values />
     <Heading>I have a personal life too, you know</Heading>
     <P
-      >In my personal life, I am a successful family man who loves his wife of
-      12 years and has 3 beautiful children. I don't claim to be perfect and am
-      constantly growing as a person. But I enjoy life, am kind where I can be
-      and ask myself the hard questions when I find it difficult. I believe in
-      the power of reflection and soul searching.
+      >I am a successful family man who loves his wife of
+      <RelativeDate date="04/13/2013" /> and has 4 beautiful children. I don't claim
+      to be perfect and am constantly growing as a person. But I enjoy life, am kind
+      where I can be and ask myself the hard questions when I find it difficult. I
+      believe in the power of reflection and soul searching.
     </P>
     <P>
       Also, I love swimming. Which is what inspired the design of this website
