@@ -15,11 +15,13 @@ describe("initThemeToggle", () => {
         onchange: null,
         addListener: vi.fn(),
         removeListener: vi.fn(),
-        addEventListener: vi.fn((event: string, listener: (event: any) => void) => {
-          if (event === "change") {
-            mediaQueryListeners.push(listener);
+        addEventListener: vi.fn(
+          (event: string, listener: (event: any) => void) => {
+            if (event === "change") {
+              mediaQueryListeners.push(listener);
+            }
           }
-        }),
+        ),
         removeEventListener: vi.fn(),
         dispatchEvent: vi.fn(),
       };
@@ -48,17 +50,22 @@ describe("initThemeToggle", () => {
       theme
       ${"dark"}
       ${"light"}
-    `("should default to $theme theme when system prefers $theme", ({ theme }) => {
-      window.matchMedia = createMatchMediaMock(theme === "dark");
+    `(
+      "should default to $theme theme when system prefers $theme",
+      ({ theme }) => {
+        window.matchMedia = createMatchMediaMock(theme === "dark");
 
-      // Simulate theme-init.ts applying theme before initThemeToggle
-      applyTheme();
-      initThemeToggle();
+        // Simulate theme-init.ts applying theme before initThemeToggle
+        applyTheme();
+        initThemeToggle();
 
-      const button = document.getElementById("theme-toggle") as HTMLInputElement;
-      expect(button.checked).toBe(theme === "light"); // false = dark, true = light
-      expect(document.documentElement.classList.contains(theme)).toBe(true);
-    });
+        const button = document.getElementById(
+          "theme-toggle"
+        ) as HTMLInputElement;
+        expect(button.checked).toBe(theme === "light"); // false = dark, true = light
+        expect(document.documentElement.classList.contains(theme)).toBe(true);
+      }
+    );
 
     it("should use localStorage theme over system preference if available", () => {
       localStorage.setItem("theme", "light");
@@ -68,7 +75,9 @@ describe("initThemeToggle", () => {
       applyTheme();
       initThemeToggle();
 
-      const button = document.getElementById("theme-toggle") as HTMLInputElement;
+      const button = document.getElementById(
+        "theme-toggle"
+      ) as HTMLInputElement;
       expect(button.checked).toBe(true); // Light from localStorage
       expect(document.documentElement.classList.contains("light")).toBe(true);
     });
@@ -78,7 +87,9 @@ describe("initThemeToggle", () => {
     it("should persist theme to localStorage when toggle button is changed", () => {
       initThemeToggle();
 
-      const button = document.getElementById("theme-toggle") as HTMLInputElement;
+      const button = document.getElementById(
+        "theme-toggle"
+      ) as HTMLInputElement;
 
       // Initially no theme in localStorage
       expect(localStorage.getItem("theme")).toBeNull();
@@ -101,7 +112,9 @@ describe("initThemeToggle", () => {
     it("should persist theme when user changes system color scheme preference", () => {
       initThemeToggle();
 
-      const button = document.getElementById("theme-toggle") as HTMLInputElement;
+      const button = document.getElementById(
+        "theme-toggle"
+      ) as HTMLInputElement;
 
       // Simulate system preference change to dark
       expect(mediaQueryListeners.length).toBeGreaterThan(0);
@@ -129,7 +142,9 @@ describe("initThemeToggle", () => {
 
       initThemeToggle();
 
-      const button = document.getElementById("theme-toggle") as HTMLInputElement;
+      const button = document.getElementById(
+        "theme-toggle"
+      ) as HTMLInputElement;
       expect(button.checked).toBe(true); // Initially light
 
       // Simulate system preference change to dark
@@ -145,7 +160,9 @@ describe("initThemeToggle", () => {
     it("should apply correct CSS classes when theme changes", () => {
       initThemeToggle();
 
-      const button = document.getElementById("theme-toggle") as HTMLInputElement;
+      const button = document.getElementById(
+        "theme-toggle"
+      ) as HTMLInputElement;
 
       // Set to light
       button.checked = true;
